@@ -24,6 +24,8 @@ type Cpu struct {
 	Irq     uint64
 	SoftIrq uint64
 	Stolen  uint64
+
+	Num uint64
 }
 
 func (cpu *Cpu) Total() uint64 {

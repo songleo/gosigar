@@ -8,6 +8,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"runtime"
 	"strconv"
 	"strings"
 	"syscall"
@@ -337,6 +338,8 @@ func parseCpuStat(self *Cpu, line string) error {
 	self.Irq, _ = strtoull(fields[6])
 	self.SoftIrq, _ = strtoull(fields[7])
 	self.Stolen, _ = strtoull(fields[8])
+
+	self.Num = uint64(runtime.NumCPU())
 
 	return nil
 }
