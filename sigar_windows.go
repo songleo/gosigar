@@ -7,6 +7,7 @@ import (
 	"errors"
 	"fmt"
 	"os/exec"
+	"runtime"
 	"strconv"
 	"syscall"
 	"time"
@@ -114,6 +115,9 @@ func (c *Cpu) Get() error {
 	c.Idle = uint64(idleTime.Nanoseconds())
 	c.Sys = uint64(kernelTime.Nanoseconds()) - c.Idle
 	c.User = uint64(userTime.Nanoseconds())
+
+	c.Num = uint64(runtime.NumCPU())
+
 	return nil
 }
 
