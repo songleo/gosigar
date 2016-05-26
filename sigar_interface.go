@@ -47,7 +47,7 @@ func (cpu Cpu) Delta(other Cpu) Cpu {
 }
 
 type LoadAverage struct {
-	One, Five, Fifteen float64
+	R1M, R5M, R15M float64
 }
 
 type Uptime struct {

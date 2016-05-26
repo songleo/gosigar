@@ -44,9 +44,9 @@ func (self *LoadAverage) Get() error {
 
 	fields := strings.Fields(string(line))
 
-	self.One, _ = strconv.ParseFloat(fields[0], 64)
-	self.Five, _ = strconv.ParseFloat(fields[1], 64)
-	self.Fifteen, _ = strconv.ParseFloat(fields[2], 64)
+	self.R1M, _ = strconv.ParseFloat(fields[0], 64)
+	self.R5M, _ = strconv.ParseFloat(fields[1], 64)
+	self.R15M, _ = strconv.ParseFloat(fields[2], 64)
 
 	return nil
 }
